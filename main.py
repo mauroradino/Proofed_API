@@ -11,9 +11,6 @@ client = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 
 chat_history = []
 
-print("--- Chat iniciado (Escribe 'salir' para terminar) ---")
-
-
 
 def get_instructions(theme):
     response = client.messages.create(
@@ -52,7 +49,3 @@ def check_repo(url, instructions):
             else:
                 content = json.dumps({"error": f"Herramienta desconocida: {tool_name}"})
                 return "error en la calificacion"
-
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8000))
-    uvicorn.run("api:app", host="0.0.0.0", port=port)
