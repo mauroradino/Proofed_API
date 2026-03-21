@@ -3,10 +3,7 @@ import random
 from datetime import datetime, timezone
 
 def get_repo_authenticity(owner, repo):
-    """
-    Calcula la autenticidad de un repositorio de GitHub para el MVP.
-    Implementa: Commit history, Repo age y Originality score (simulado).
-    """
+    
     base_url = f"https://api.github.com/repos/{owner}/{repo}"
     headers = {
         "User-Agent": "AI-Agent-Validator-MVP",
