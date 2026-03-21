@@ -1,6 +1,4 @@
-import anthropic
 import requests
-import json
 import re
 
 def get_repo_files(github_url: str) -> dict:
