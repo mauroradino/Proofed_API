@@ -1,10 +1,17 @@
-from fastapi import FastAPI
 from main import get_instructions as get_instructions_from_agent
+from fastapi.middleware.cors import CORSMiddleware
 from main import check_repo as evaluator
+from fastapi import FastAPI
 
 app = FastAPI()
 
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.post("/get_instruction")
 def get_instructions(theme: str):
