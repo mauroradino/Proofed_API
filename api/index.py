@@ -1,7 +1,7 @@
-from main import get_instructions as get_instructions_from_agent
+from api.main import get_instructions as get_instructions_from_agent
 from fastapi.middleware.cors import CORSMiddleware
-from main import check_repo as evaluator
-from utils import get_repo_authenticity
+from api.main import check_repo as evaluator
+from api.utils import get_repo_authenticity
 from fastapi import FastAPI
 
 app = FastAPI()

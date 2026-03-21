@@ -1,8 +1,8 @@
 from anthropic import Anthropic
 import os
 from dotenv import load_dotenv
-from prompt import auditor_agent_prompt, explorer_agent_prompt, instructions_agent_prompt
-from tools import repo_tool, get_repo_files  
+from api.prompt import auditor_agent_prompt, explorer_agent_prompt, instructions_agent_prompt
+from api.tools import repo_tool, get_repo_files  
 
 load_dotenv()
 
