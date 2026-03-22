@@ -21,7 +21,6 @@ def get_instructions(theme):
     return response.content[0].text
 
 def check_repo(url, instructions):
-
     response = client.messages.create(
             model="claude-3-haiku-20240307",
             max_tokens=1024,
@@ -38,6 +37,7 @@ def check_repo(url, instructions):
                 import json
                 resultado = get_repo_files(url)
                 content = json.dumps(resultado, ensure_ascii=False)
+                print("CONTENT:", content)
                 calification_response = client.messages.create(
                     model="claude-3-haiku-20240307",
                     max_tokens=1024,

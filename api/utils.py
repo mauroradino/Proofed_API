@@ -68,3 +68,26 @@ def get_repo_authenticity(owner, repo):
 
     except Exception as e:
         return {"pattern": "unverified"}
+
+
+
+
+def calculate_consensus(reviews):
+    # reviews es una lista con los 3 JSONs de los auditores
+    scores = [r['score'] for r in reviews]
+    
+    # 1. Promedio simple
+    final_score = sum(scores) / len(scores)
+    
+    # 2. Verificación de Desviación (Si uno está muy lejos de los otros)
+    # Ejemplo: Si los scores son [85, 88, 40], hay un problema.
+    max_diff = max(scores) - min(scores)
+    
+    status = "passed" if final_score >= 60 else "failed"
+    
+    return {
+        "final_score": round(final_score, 2),
+        "status": status,
+        "agreement_delta": max_diff,
+        "is_consistent": max_diff < 20 # Si la diferencia es < 20, el consenso es confiable
+    }
