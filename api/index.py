@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from utils import get_repo_authenticity
+from .utils import get_repo_authenticity
 # Importamos el cliente de GenLayer (ajustado según lo que vimos antes)
 from genlayer_py import create_client
 from genlayer_py.chains import testnet_bradbury
