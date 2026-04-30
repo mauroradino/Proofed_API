@@ -1,0 +1,4 @@
+-r requirements.txt
+ipykernel
+ipython
+jupyter_client
