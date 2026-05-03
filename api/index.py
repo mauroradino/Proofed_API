@@ -9,7 +9,7 @@ app = FastAPI()
 
 # Configuración GenLayer
 client = create_client(chain=testnet_bradbury)
-CONTRACT_ADDR = "0x5D0f832B8B8220CB422ea8fdd3856cEcAE74B03f"
+CONTRACT_ADDR = "0xDf5ECBf83636c1C4BE07b54b3D8a68df8428AafA"
 
 app.add_middleware(
     CORSMiddleware,
